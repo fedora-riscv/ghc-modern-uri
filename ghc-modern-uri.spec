@@ -7,15 +7,14 @@
 # testsuite missing deps: hspec-megaparsec
 
 Name:           ghc-%{pkg_name}
-Version:        0.3.2.0
-Release:        3%{?dist}
+Version:        0.3.3.0
+Release:        1%{?dist}
 Summary:        Modern library for working with URIs
 
 License:        BSD
 Url:            https://hackage.haskell.org/package/%{pkg_name}
 # Begin cabal-rpm sources:
 Source0:        https://hackage.haskell.org/package/%{pkgver}/%{pkgver}.tar.gz
-Source1:        https://hackage.haskell.org/package/%{pkgver}/%{pkg_name}.cabal#/%{pkgver}.cabal
 # End cabal-rpm sources
 
 # Begin cabal-rpm deps:
@@ -78,7 +77,6 @@ This package provides the Haskell %{pkg_name} profiling library.
 %prep
 # Begin cabal-rpm setup:
 %setup -q -n %{pkgver}
-cp -bp %{SOURCE1} %{pkg_name}.cabal
 # End cabal-rpm setup
 
 
@@ -116,6 +114,9 @@ cp -bp %{SOURCE1} %{pkg_name}.cabal
 
 
 %changelog
+* Thu Aug  5 2021 Jens Petersen <petersen@redhat.com> - 0.3.3.0-1
+- update to 0.3.3.0
+
 * Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.3.2.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
