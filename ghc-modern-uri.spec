@@ -7,7 +7,7 @@
 # testsuite missing deps: hspec-megaparsec
 
 Name:           ghc-%{pkg_name}
-Version:        0.3.3.0
+Version:        0.3.4.1
 Release:        1%{?dist}
 Summary:        Modern library for working with URIs
 
@@ -115,6 +115,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Thu Aug  5 2021 Jens Petersen <petersen@redhat.com> - 0.3.4.1-1
+- update to 0.3.4.1
+
 * Thu Aug  5 2021 Jens Petersen <petersen@redhat.com> - 0.3.3.0-1
 - update to 0.3.3.0
 
