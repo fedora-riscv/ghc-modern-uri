@@ -7,19 +7,17 @@
 %bcond_without tests
 
 Name:           ghc-%{pkg_name}
-Version:        0.3.4.3
-Release:        2%{?dist}
+Version:        0.3.6.0
+Release:        1%{?dist}
 Summary:        Modern library for working with URIs
 
 License:        BSD-3-Clause
 Url:            https://hackage.haskell.org/package/%{pkg_name}
 # Begin cabal-rpm sources:
 Source0:        https://hackage.haskell.org/package/%{pkgver}/%{pkgver}.tar.gz
-Source1:        https://hackage.haskell.org/package/%{pkgver}/%{pkg_name}.cabal#/%{pkgver}.cabal
 # End cabal-rpm sources
 
 # Begin cabal-rpm deps:
-BuildRequires:  dos2unix
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
 BuildRequires:  ghc-QuickCheck-devel
@@ -29,6 +27,7 @@ BuildRequires:  ghc-containers-devel
 BuildRequires:  ghc-contravariant-devel
 BuildRequires:  ghc-deepseq-devel
 BuildRequires:  ghc-exceptions-devel
+BuildRequires:  ghc-hashable-devel
 BuildRequires:  ghc-megaparsec-devel
 BuildRequires:  ghc-mtl-devel
 BuildRequires:  ghc-profunctors-devel
@@ -44,6 +43,7 @@ BuildRequires:  ghc-containers-prof
 BuildRequires:  ghc-contravariant-prof
 BuildRequires:  ghc-deepseq-prof
 BuildRequires:  ghc-exceptions-prof
+BuildRequires:  ghc-hashable-prof
 BuildRequires:  ghc-megaparsec-prof
 BuildRequires:  ghc-mtl-prof
 BuildRequires:  ghc-profunctors-prof
@@ -101,7 +101,6 @@ This package provides the Haskell %{pkg_name} profiling library.
 %prep
 # Begin cabal-rpm setup:
 %setup -q -n %{pkgver}
-dos2unix -k -n %{SOURCE1} %{pkg_name}.cabal
 # End cabal-rpm setup
 
 
@@ -145,6 +144,10 @@ dos2unix -k -n %{SOURCE1} %{pkg_name}.cabal
 
 
 %changelog
+* Sun Jan 22 2023 Jens Petersen <petersen@redhat.com> - 0.3.6.0-1
+- https://hackage.haskell.org/package/modern-uri-0.3.6.0/changelog
+- refresh to cabal-rpm-2.1.0 with SPDX migration
+
 * Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.3.4.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
