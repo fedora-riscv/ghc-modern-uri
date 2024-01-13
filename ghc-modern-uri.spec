@@ -4,11 +4,13 @@
 %global pkg_name modern-uri
 %global pkgver %{pkg_name}-%{version}
 
+%ifnarch riscv64
 %bcond_without tests
+%endif
 
 Name:           ghc-%{pkg_name}
 Version:        0.3.6.0
-Release:        %autorelease
+Release:        %autorelease -e 0.rv64
 Summary:        Modern library for working with URIs
 
 License:        BSD-3-Clause
